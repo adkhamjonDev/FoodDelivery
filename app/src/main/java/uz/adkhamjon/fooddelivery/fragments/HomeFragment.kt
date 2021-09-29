@@ -1,4 +1,5 @@
 package uz.adkhamjon.fooddelivery.fragments
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding=FragmentHomeBinding.inflate(inflater,container,false)
+
         return binding.root
     }
 }

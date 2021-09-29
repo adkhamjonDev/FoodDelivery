@@ -11,6 +11,8 @@
     app:chainUseRtl="true"
     tools:openDrawer="start">
     <com.google.android.material.navigation.NavigationView
+        android:paddingLeft="10dp"
+        android:paddingRight="30dp"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         android:background="#FA4A0C"
@@ -30,7 +32,6 @@
                 android:foreground="?selectableItemBackgroundBorderless"
                 app:cardElevation="0dp"
                 android:layout_marginBottom="20dp"
-                android:layout_marginLeft="20dp"
                 app:cardCornerRadius="14dp"
                 app:cardBackgroundColor="#FA4A0C"
                 app:layout_constraintStart_toStartOf="parent"

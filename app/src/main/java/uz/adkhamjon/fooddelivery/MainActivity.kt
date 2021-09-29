@@ -18,21 +18,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
         )
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val display: Display = windowManager.defaultDisplay
-        val size = Point()
-        display.getSize(size)
-        val bmp = Bitmap.createScaledBitmap(
-            BitmapFactory.decodeResource(
-                resources, R.drawable.splash
-
-            ), size.x, size.y, true
-        )
-        binding.image.setImageBitmap(bmp)
+//        val display: Display = windowManager.defaultDisplay
+//        val size = Point()
+//        display.getSize(size)
+//        val bmp = Bitmap.createScaledBitmap(
+//            BitmapFactory.decodeResource(
+//                resources, R.drawable.splash
+//
+//            ), size.x, size.y, true
+//        )
+//        binding.image.setImageBitmap(bmp)
         if(SharedPreference.getInstance(this).haslang){
             startActivity(Intent(this,SplashActivity::class.java))
             finish()

@@ -1,5 +1,6 @@
 package uz.adkhamjon.fooddelivery
 
+import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
@@ -25,11 +26,12 @@ class FoodActivity : AppCompatActivity() {
         binding = ActivityFoodBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarFood.top)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            this.window.statusBarColor = this.getColor(R.color.orange)
+        }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_food)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home

@@ -2,19 +2,34 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_divider">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:icon="@drawable/ic_gg_profile"
+            android:title="Profile" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_divider2">
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:icon="@drawable/ic_icons8_buy"
+            android:title="Orders" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_divider3">
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/ic_outline_local_offer"
+            android:title="Offer and promo" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_divider4">
+        <item
+            android:icon="@drawable/ic_outline_sticky_note_2"
+            android:title="Privacy policy" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_divider5">
+        <item
+            android:icon="@drawable/ic_whh_securityalt"
+            android:title="Security" />
     </group>
 </menu>
