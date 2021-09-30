@@ -7,7 +7,12 @@
 
     <fragment
         android:id="@+id/nav_home"
+        android:label=""
         android:name="uz.adkhamjon.fooddelivery.fragments.HomeFragment"
-        android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="uz.adkhamjon.fooddelivery.fragments.MyProfileFragment"
+        android:label="My profile"
+        tools:layout="@layout/fragment_my_profile" />
 </navigation>

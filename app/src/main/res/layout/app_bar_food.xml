@@ -22,5 +22,7 @@
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
-    <include layout="@layout/content_food" />
+    <include
+        android:id="@+id/content"
+        layout="@layout/content_food" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

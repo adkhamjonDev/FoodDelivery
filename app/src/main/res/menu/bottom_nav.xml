@@ -3,7 +3,7 @@
 
     <item
         android:icon="@drawable/ic_home"
-        android:id="@+id/home"
+        android:id="@+id/nav_home"
         android:title="" />
     <item
         android:icon="@drawable/ic_heart"
@@ -11,7 +11,7 @@
         android:title="" />
     <item
         android:icon="@drawable/ic_user"
-        android:id="@+id/user"
+        android:id="@+id/myProfileFragment"
         android:title="" />
     <item
         android:icon="@drawable/ic_history"

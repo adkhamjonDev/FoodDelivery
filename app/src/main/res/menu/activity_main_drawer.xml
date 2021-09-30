@@ -5,6 +5,7 @@
     <group android:checkableBehavior="single"
         android:id="@+id/group_divider">
         <item
+            android:id="@+id/myProfileFragment"
             android:icon="@drawable/ic_gg_profile"
             android:title="Profile" />
     </group>
