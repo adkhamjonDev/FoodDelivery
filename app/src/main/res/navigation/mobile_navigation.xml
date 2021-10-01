@@ -20,4 +20,24 @@
         android:name="uz.adkhamjon.fooddelivery.fragments.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="uz.adkhamjon.fooddelivery.fragments.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="uz.adkhamjon.fooddelivery.fragments.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/likedFragment"
+        android:name="uz.adkhamjon.fooddelivery.fragments.LikedFragment"
+        android:label="fragment_liked"
+        tools:layout="@layout/fragment_liked" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="uz.adkhamjon.fooddelivery.fragments.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

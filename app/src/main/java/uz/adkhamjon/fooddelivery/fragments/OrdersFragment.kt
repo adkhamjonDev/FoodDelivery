@@ -8,31 +8,25 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import uz.adkhamjon.fooddelivery.FoodActivity
 import uz.adkhamjon.fooddelivery.R
-import uz.adkhamjon.fooddelivery.databinding.FragmentHistoryBinding
+import uz.adkhamjon.fooddelivery.databinding.FragmentOrdersBinding
 
-class HistoryFragment : Fragment() {
-    private lateinit var binding:FragmentHistoryBinding
+class OrdersFragment : Fragment() {
+    private lateinit var binding:FragmentOrdersBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding=FragmentHistoryBinding.inflate(inflater, container, false)
+        binding=FragmentOrdersBinding.inflate(inflater, container, false)
 
 
-
+        binding.back.setOnClickListener {
+            findNavController().popBackStack()
+        }
         return binding.root
-    }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        (activity as FoodActivity).hideToolbar()
     }
     override fun onDestroy() {
         super.onDestroy()
         (activity as FoodActivity).showToolbar()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        (activity as FoodActivity).hideToolbar()
+        (activity as FoodActivity).showBottomNav()
     }
 }

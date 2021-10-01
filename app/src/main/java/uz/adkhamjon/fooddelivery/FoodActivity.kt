@@ -56,27 +56,25 @@ class FoodActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
                 R.id.myProfileFragment->{
                     navController.navigate(R.id.myProfileFragment)
                     hideToolbar()
+                    hideBottomNav()
+                }
+                R.id.ordersFragment->{
+                    navController.navigate(R.id.ordersFragment)
+                    hideToolbar()
+                    hideBottomNav()
                 }
             }
             drawerLayout.closeDrawers()
             true
         }
+        binding.appBarFood.bell.setOnClickListener {
+            navController.navigate(R.id.notificationFragment)
+            hideToolbar()
+        }
     }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_food)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.top_menu, menu)
-        return true
-    }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.cart->{
-
-            }
-        }
-        return super.onOptionsItemSelected(item)
     }
     override fun onBackPressed() {
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
@@ -126,11 +124,23 @@ class FoodActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
                 }
             }
             R.id.myProfileFragment->{
-                if (R.id.myProfileFragment != navController.currentDestination?.id) {
+
+            }
+            R.id.historyFragment->{
+                if (R.id.historyFragment != navController.currentDestination?.id) {
                     while (R.id.nav_home != navController.currentDestination?.id && navController.currentDestination?.id != null) {
                         navController.popBackStack()
                     }
-                    navController.navigate(R.id.myProfileFragment)
+                    navController.navigate(R.id.historyFragment)
+                    hideToolbar()
+                }
+            }
+            R.id.likedFragment->{
+                if (R.id.likedFragment != navController.currentDestination?.id) {
+                    while (R.id.nav_home != navController.currentDestination?.id && navController.currentDestination?.id != null) {
+                        navController.popBackStack()
+                    }
+                    navController.navigate(R.id.likedFragment)
                     hideToolbar()
                 }
             }

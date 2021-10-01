@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#F2F2F2"
     android:layout_height="match_parent"
+    android:background="#F2F2F2"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.HistoryFragment">
+    tools:context=".fragments.OrdersFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top"
         app:layout_constraintTop_toTopOf="parent"
@@ -15,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize">
         <androidx.cardview.widget.CardView
-            android:visibility="gone"
+            android:visibility="visible"
             android:id="@+id/back"
             app:cardBackgroundColor="#F2F2F2"
             app:cardElevation="0dp"
@@ -43,7 +42,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="History"
+            android:text="Orders"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -58,14 +57,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp">
         <ImageView
-            android:src="@drawable/ic_vector__4_"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/group_66"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:textSize="@dimen/_20sdp"
-            android:text="No history yet"
+            android:text="No orders yet"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

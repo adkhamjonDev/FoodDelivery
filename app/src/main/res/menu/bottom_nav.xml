@@ -7,14 +7,14 @@
         android:title="" />
     <item
         android:icon="@drawable/ic_heart__2_"
-        android:id="@+id/like"
+        android:id="@+id/likedFragment"
         android:title="" />
     <item
-        android:icon="@drawable/ic_user__2_"
+        android:icon="@drawable/ic_shopping_cart__2_"
         android:id="@+id/myProfileFragment"
         android:title="" />
     <item
         android:icon="@drawable/ic_history"
-        android:id="@+id/history"
+        android:id="@+id/historyFragment"
         android:title="" />
 </menu>
