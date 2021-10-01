@@ -5,10 +5,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.view.Gravity
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.navigation.NavigationView
@@ -35,9 +32,10 @@ class FoodActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
         setContentView(binding.root)
         binding.appBarFood.content.bottomNav.setOnItemSelectedListener(this)
         setSupportActionBar(binding.appBarFood.top)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            this.window.statusBarColor = this.getColor(R.color.orange)
-        }
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         navController = findNavController(R.id.nav_host_fragment_content_food)
