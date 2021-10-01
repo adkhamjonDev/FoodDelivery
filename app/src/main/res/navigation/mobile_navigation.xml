@@ -15,4 +15,9 @@
         android:name="uz.adkhamjon.fooddelivery.fragments.MyProfileFragment"
         android:label="My profile"
         tools:layout="@layout/fragment_my_profile" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="uz.adkhamjon.fooddelivery.fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
 </navigation>
