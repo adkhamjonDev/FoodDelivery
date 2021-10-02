@@ -17,7 +17,9 @@ class OrdersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding=FragmentOrdersBinding.inflate(inflater, container, false)
-
+        if(arguments!=null){
+            binding.back.visibility=View.GONE
+        }
 
         binding.back.setOnClickListener {
             findNavController().popBackStack()
@@ -28,5 +30,10 @@ class OrdersFragment : Fragment() {
         super.onDestroy()
         (activity as FoodActivity).showToolbar()
         (activity as FoodActivity).showBottomNav()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as FoodActivity).hideToolbar()
     }
 }

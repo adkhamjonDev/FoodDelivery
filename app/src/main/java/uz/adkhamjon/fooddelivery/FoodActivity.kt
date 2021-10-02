@@ -12,6 +12,7 @@ import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -139,6 +140,15 @@ class FoodActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
                         navController.popBackStack()
                     }
                     navController.navigate(R.id.likedFragment)
+                    hideToolbar()
+                }
+            }
+            R.id.ordersFragment->{
+                if (R.id.ordersFragment != navController.currentDestination?.id) {
+                    while (R.id.nav_home != navController.currentDestination?.id && navController.currentDestination?.id != null) {
+                        navController.popBackStack()
+                    }
+                    navController.navigate(R.id.ordersFragment, bundleOf("check" to "bottom"))
                     hideToolbar()
                 }
             }

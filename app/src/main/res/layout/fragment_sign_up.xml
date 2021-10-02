@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F2F2F2"
     tools:context=".fragments.SignUpFragment">
-
     <LinearLayout
         android:orientation="vertical"
         android:id="@+id/l"
@@ -32,7 +31,7 @@
             <TextView
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:text="Email address"
+                android:text="Username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
@@ -40,7 +39,7 @@
                 android:id="@+id/user_email"
                 android:paddingBottom="15dp"
                 android:textColor="@color/black"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:backgroundTint="@color/black"
@@ -50,25 +49,41 @@
             <TextView
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Password"
+                android:text="Phone number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <EditText
-                android:paddingRight="5dp"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:id="@+id/user_password"
                 android:paddingBottom="15dp"
-                android:textColor="@color/black"
-                android:inputType="textPassword"
+                android:gravity="center_vertical"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:backgroundTint="@color/black"
-                android:hint="Enter your password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ccpDialog_cornerRadius="8dp"
+                    app:ccpDialog_keyboardAutoPopup="true"
+                    app:ccpDialog_allowSearch="true"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_countryPreference="in,us,nz,gb"
+                    app:ccp_hintExampleNumber="true"/>
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:paddingBottom="15dp"
+                    android:backgroundTint="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
             <TextView
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:text="Confirm Password"
+                android:text="Verification code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
@@ -80,7 +95,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:backgroundTint="@color/black"
-                android:hint="Confirm your password"
+                android:hint="Enter code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <ProgressBar

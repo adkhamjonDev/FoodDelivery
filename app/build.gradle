@@ -55,4 +55,5 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.yinglan.shadowimageview:shadowimageview:1.0.4'
     implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    implementation 'com.hbb20:ccp:2.5.4'
 }

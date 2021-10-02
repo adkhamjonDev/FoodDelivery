@@ -11,7 +11,7 @@
         android:title="" />
     <item
         android:icon="@drawable/ic_shopping_cart__2_"
-        android:id="@+id/myProfileFragment"
+        android:id="@+id/ordersFragment"
         android:title="" />
     <item
         android:icon="@drawable/ic_history"

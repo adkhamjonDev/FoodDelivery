@@ -32,42 +32,42 @@
             <TextView
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:text="Email address"
+                android:text="Username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:id="@+id/email_login"
                 android:paddingBottom="20dp"
                 android:textColor="@color/black"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:backgroundTint="@color/black"
-                android:hint="Enter your email address"
+                android:hint="Enter your username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Password"
+                android:text="Code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:id="@+id/password_login"
                 android:paddingBottom="20dp"
                 android:textColor="@color/black"
-                android:inputType="textPassword"
+                android:inputType="numberPassword"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:backgroundTint="@color/black"
-                android:hint="Enter your password"
+                android:hint="Enter your code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:textColor="#FA4A0C"
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:text="Forgot Passcode?"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Forgot code?"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <ProgressBar
@@ -116,5 +116,4 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
