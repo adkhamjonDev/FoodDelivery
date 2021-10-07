@@ -16,7 +16,6 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding=FragmentSignUpBinding.inflate(inflater, container, false)
-        binding.ccp.registerCarrierNumberEditText(binding.etPhone)
 
         return binding.root
     }
