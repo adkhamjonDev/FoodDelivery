@@ -17,4 +17,5 @@
     <string name="drawer_close">close</string>
     <string name="example_tittle">Внимание! Ознакомтесь!</string>
     <string name="example_вуыскшзешщт">Профилактические работы 1 октября с 12:00 до 18:00</string>
+    <string name="we">We\'ve sent an SMS with an activation code to your phone</string>
 </resources>

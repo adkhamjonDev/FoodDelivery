@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHeight_percent="0.38"
+        app:layout_constraintHeight_percent="0.28"
         android:layout_width="0dp"
         android:layout_height="0dp">
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,37 +36,8 @@
                 app:layout_constraintWidth_percent="0.5"
                 android:layout_width="0dp"
                 android:layout_height="0dp"/>
-<!--            <com.google.android.material.tabs.TabLayout-->
-<!--                app:tabRippleColor="@null"-->
-<!--                app:tabTextColor="@color/black"-->
-<!--                android:id="@+id/tablayout"-->
-<!--                android:layout_marginLeft="40dp"-->
-<!--                android:layout_marginRight="40dp"-->
-<!--                app:tabIndicatorColor="#FA4A0C"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-<!--                <com.google.android.material.tabs.TabItem-->
-<!--                    android:text="Login"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
-<!--                <com.google.android.material.tabs.TabItem-->
-<!--                    android:text="Sign Up"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
-<!--            </com.google.android.material.tabs.TabLayout>-->
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-<!--    <androidx.viewpager.widget.ViewPager-->
-<!--        android:id="@+id/viewPager"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"/>-->
 
       <LinearLayout
           app:layout_constraintTop_toBottomOf="@id/card"
@@ -86,7 +57,7 @@
                   android:layout_height="match_parent">
                   <TextView
                       android:id="@+id/t1"
-                      android:text="Введите смс код"
+                      android:text="Enter code"
                       android:layout_marginTop="20dp"
                       android:layout_marginLeft="30dp"
                       app:layout_constraintStart_toStartOf="parent"
@@ -97,10 +68,10 @@
                       android:layout_height="wrap_content"/>
                   <TextView
                       android:id="@+id/t2"
-                      android:textSize="@dimen/_13sdp"
+                      android:textSize="@dimen/_11sdp"
                       android:layout_marginTop="10dp"
                       android:textColor="@color/black"
-                      android:text="Одноразовый код отправлен на номер"
+                      android:text="@string/we"
                       app:layout_constraintTop_toBottomOf="@id/t1"
                       app:layout_constraintStart_toStartOf="@id/t1"
                       android:layout_width="wrap_content"
@@ -120,7 +91,7 @@
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:layout_marginTop="30dp"
-                      android:text="Смс код"
+                      android:text="SMS code"
                       android:textSize="@dimen/_13sdp"
                       app:layout_constraintStart_toStartOf="@id/t3"
                       app:layout_constraintTop_toBottomOf="@+id/t3" />
@@ -137,27 +108,39 @@
                       app:layout_constraintStart_toEndOf="@+id/info1"
                       app:layout_constraintTop_toBottomOf="@+id/t3" />
 
-                  <EditText
-                      android:id="@+id/code"
-                      android:layout_width="0dp"
-                      android:layout_height="50dp"
-                      android:layout_marginTop="12dp"
-                      android:background="@drawable/border"
-                      android:hint="******"
-                      android:paddingStart="15dp"
-                      android:paddingLeft="15dp"
+                  <com.chaos.view.PinView
+                      android:layout_marginTop="15dp"
+                      app:layout_constraintWidth_percent="0.85"
                       app:layout_constraintEnd_toEndOf="parent"
                       app:layout_constraintStart_toStartOf="parent"
-                      app:layout_constraintTop_toBottomOf="@+id/info1"
-                      app:layout_constraintWidth_percent="0.85" />
-
+                      app:layout_constraintTop_toBottomOf="@id/info1"
+                      android:id="@+id/code"
+                      style="@style/PinWidget.PinView"
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:cursorVisible="true"
+                      android:inputType="number"
+                      android:state_selected="true"
+                      android:itemBackground="#25FABEA9"
+                      android:textColor="@color/black"
+                      android:textSize="20sp"
+                      app:cursorColor="@color/black"
+                      app:cursorWidth="2dp"
+                      app:itemCount="5"
+                      app:itemHeight="60dp"
+                      app:itemRadius="5dp"
+                      app:itemSpacing="12dp"
+                      app:itemWidth="60dp"
+                      app:lineColor="#FA4A0C"
+                      app:lineWidth="2dp"
+                      app:viewType="rectangle" />
                   <ImageView
                       android:id="@+id/image"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:layout_marginTop="28dp"
                       android:src="@drawable/ic_refresh"
-                      app:layout_constraintStart_toStartOf="@id/code"
+                      app:layout_constraintStart_toStartOf="@id/info1"
                       app:layout_constraintTop_toBottomOf="@id/code" />
 
                   <TextView
@@ -167,7 +150,7 @@
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:layout_marginTop="25dp"
-                      android:text="Отправить код заново"
+                      android:text="Send code again"
                       android:textColor="#20D472"
                       android:textSize="16sp"
                       app:layout_constraintEnd_toEndOf="parent"
