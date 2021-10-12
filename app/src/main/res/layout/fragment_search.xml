@@ -67,7 +67,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <androidx.recyclerview.widget.RecyclerView
-            tools:listitem="@layout/search_item"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            tools:listitem="@layout/food_item"
             android:orientation="vertical"
             android:id="@+id/recView"
             app:spanCount="2"

@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import uz.adkhamjon.fooddelivery.FoodActivity
 import uz.adkhamjon.fooddelivery.R
 import uz.adkhamjon.fooddelivery.adapters.HomeRvRvAdapter
-import uz.adkhamjon.fooddelivery.adapters.NotificationRvAdapter
 import uz.adkhamjon.fooddelivery.databinding.FragmentTypePagerBinding
 
 class TypePagerFragment : Fragment() {
@@ -25,14 +24,14 @@ class TypePagerFragment : Fragment() {
         for (i in 0 until 10){
             list.add(1)
         }
-        homeRvRvAdapter= HomeRvRvAdapter(list,object: HomeRvRvAdapter.OnItemClickListener{
-            override fun onItem(position: Int) {
-                findNavController().navigate(R.id.infoFragment)
-                (activity as FoodActivity).hideToolbar()
-                (activity as FoodActivity).hideBottomNav()
-            }
-        })
-        binding.recView.adapter=homeRvRvAdapter
+//        homeRvRvAdapter= HomeRvRvAdapter(list,object: HomeRvRvAdapter.OnItemClickListener{
+//            override fun onItem(position: Int) {
+//                findNavController().navigate(R.id.infoFragment)
+//                (activity as FoodActivity).hideToolbar()
+//                (activity as FoodActivity).hideBottomNav()
+//            }
+//        })
+//        binding.recView.adapter=homeRvRvAdapter
         return binding.root
     }
 }

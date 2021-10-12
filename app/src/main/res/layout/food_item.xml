@@ -1,71 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/_210sdp"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView
-        app:layout_constraintVertical_bias="0.8"
+<androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?selectableItemBackgroundBorderless"
         android:id="@+id/card1"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:cardCornerRadius="40dp"
+        app:cardCornerRadius="10dp"
         android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHeight_percent="0.7"
-        android:layout_height="0dp">
-        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="@dimen/_200sdp">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                app:layout_constraintVertical_bias="0.6"
-                android:id="@+id/name"
-                android:textStyle="bold"
-                android:lineHeight="@dimen/_20sdp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_17sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:gravity="center"
-                android:text="Veggie\ntomato mix"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_marginTop="10dp"
-                android:id="@+id/price"
-                android:lineHeight="@dimen/_20sdp"
-                android:textColor="#FA4A0C"
-                android:textSize="@dimen/_18sdp"
-                app:layout_constraintTop_toBottomOf="@id/name"
-                app:layout_constraintEnd_toEndOf="@id/name"
-                app:layout_constraintStart_toStartOf="@id/name"
-                android:gravity="center"
-                android:text="15 000 $"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/image"
+                    android:src="@drawable/ic_launcher_background"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/name"
+                        android:textStyle="bold"
+                        android:lineHeight="@dimen/_20sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:gravity="center"
+                        android:text="Veggie\ntomato mix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        app:cardCornerRadius="@dimen/_60sdp"
-        app:cardElevation="7dp"
-        app:layout_constraintVertical_bias="0.2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/card1"
-        app:layout_constraintStart_toStartOf="@id/card1"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="@dimen/_120sdp"
-        android:layout_height="@dimen/_120sdp">
-        <ImageView
-            android:src="@drawable/image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>

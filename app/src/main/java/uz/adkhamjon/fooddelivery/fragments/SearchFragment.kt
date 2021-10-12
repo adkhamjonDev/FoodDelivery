@@ -15,22 +15,19 @@ import uz.adkhamjon.fooddelivery.databinding.FragmentSearchBinding
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
     private lateinit var searchRvAdapter: SearchRvAdapter
-    private lateinit var list: ArrayList<Int>
+    private lateinit var list: ArrayList<String>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
         binding=FragmentSearchBinding.inflate(inflater, container, false)
+        loadCategory()
         binding.back.setOnClickListener {
             findNavController().popBackStack()
             (activity as FoodActivity).showBottomNav()
             (activity as FoodActivity).showToolbar()
         }
-        list= ArrayList()
-        for (i in 0 until 10){
-            list.add(1)
-        }
-        searchRvAdapter= SearchRvAdapter(list,object: SearchRvAdapter.OnItemClickListener{
+        searchRvAdapter= SearchRvAdapter(requireContext(),list,object: SearchRvAdapter.OnItemClickListener{
             override fun onItem(position: Int) {
                 findNavController().navigate(R.id.infoFragment)
                 (activity as FoodActivity).hideToolbar()
@@ -39,5 +36,33 @@ class SearchFragment : Fragment() {
         })
         binding.recView.adapter=searchRvAdapter
         return binding.root
+    }
+    private fun loadCategory() {
+        list=ArrayList()
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+        list.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (activity as FoodActivity).hideToolbar()
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        (activity as FoodActivity).showToolbar()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as FoodActivity).hideToolbar()
     }
 }

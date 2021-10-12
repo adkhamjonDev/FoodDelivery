@@ -1,12 +1,14 @@
 package uz.adkhamjon.fooddelivery.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import uz.adkhamjon.fooddelivery.databinding.FoodItemBinding
 import uz.adkhamjon.fooddelivery.databinding.NotificationItemBinding
 
-class HomeRvRvAdapter(var list: List<Int>, var onItemClickListener: OnItemClickListener):
+class HomeRvRvAdapter(var context: Context, var list:List<String>,var onItemClickListener: OnItemClickListener):
     RecyclerView.Adapter<HomeRvRvAdapter.MyViewHolder>(){
     inner class MyViewHolder(var foodItemBinding: FoodItemBinding): RecyclerView.ViewHolder(
         foodItemBinding.root){
@@ -22,6 +24,7 @@ class HomeRvRvAdapter(var list: List<Int>, var onItemClickListener: OnItemClickL
         )
     }
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        Glide.with(context).load(list[position]).into(holder.foodItemBinding.image)
         holder.foodItemBinding.card1.setOnClickListener {
             onItemClickListener.onItem(position)
         }
