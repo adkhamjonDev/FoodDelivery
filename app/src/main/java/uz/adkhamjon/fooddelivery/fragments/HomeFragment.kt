@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import uz.adkhamjon.fooddelivery.FoodActivity
 import uz.adkhamjon.fooddelivery.R
 import uz.adkhamjon.fooddelivery.adapters.BannerPagerAdapter
@@ -25,17 +27,19 @@ class HomeFragment : Fragment() {
         loadCategory()
         bannerPagerAdapter= BannerPagerAdapter(requireContext(),categoryList)
         binding.viewpager.adapter=bannerPagerAdapter
-        binding.search.setOnClickListener {
-            findNavController().navigate(R.id.searchFragment)
-            (activity as FoodActivity).hideBottomNav()
-            (activity as FoodActivity).hideToolbar()
-        }
         homeRvRvAdapter= HomeRvRvAdapter(requireContext(),categoryList2,object :HomeRvRvAdapter.OnItemClickListener{
             override fun onItem(position: Int) {
 
             }
         })
         binding.recView.adapter=homeRvRvAdapter
+
+        binding.search.setOnClickListener {
+            findNavController().navigate(R.id.searchFragment)
+            (activity as FoodActivity).hideBottomNav()
+            (activity as FoodActivity).hideToolbar()
+        }
+
         return binding.root
     }
     private fun loadCategory() {
@@ -53,4 +57,9 @@ class HomeFragment : Fragment() {
         categoryList2.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
         categoryList2.add("https://i.pinimg.com/736x/cb/c7/1b/cbc71be3e195319e911d6c6f8816b069.jpg")
     }
+
+//    override fun onStart() {
+//        super.onStart()
+//        binding.recView.isNestedScrollingEnabled=true
+//    }
 }

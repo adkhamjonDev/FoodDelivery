@@ -9,12 +9,16 @@
     android:orientation="vertical"
     tools:context=".fragments.HomeFragment">
         <androidx.core.widget.NestedScrollView
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/nested"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
             <LinearLayout
+                android:descendantFocusability="blocksDescendants"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="20dp"
@@ -61,15 +65,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_140sdp"/>
             <androidx.recyclerview.widget.RecyclerView
+                android:overScrollMode="never"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:layout_marginTop="15dp"
                 android:id="@+id/recView"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="2"
                 tools:listitem="@layout/food_item"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="wrap_content"/>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 </LinearLayout>
