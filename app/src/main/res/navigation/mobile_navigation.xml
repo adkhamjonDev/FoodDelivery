@@ -45,4 +45,8 @@
         android:name="uz.adkhamjon.fooddelivery.fragments.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/foodTypeFragment"
+        android:name="uz.adkhamjon.fooddelivery.fragments.FoodTypeFragment"
+        tools:layout="@layout/fragment_food_type" />
 </navigation>

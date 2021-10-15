@@ -1,27 +1,20 @@
 package uz.adkhamjon.fooddelivery.adapters
 
-import android.content.Context
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import uz.adkhamjon.fooddelivery.fragments.LoginFragment
-import uz.adkhamjon.fooddelivery.fragments.SignUpFragment
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import uz.adkhamjon.fooddelivery.fragments.FoodTypePagerFragment
 
-class MyPagerAdapter(private val myContext: Context, fm: FragmentManager,
-                     private var totalTabs: Int)
-    : FragmentPagerAdapter(fm) {
-    override fun getCount(): Int {
-        return totalTabs
+
+class MyPagerAdapter(fragmentActivity: FragmentActivity,var list:List<String>): FragmentStateAdapter(fragmentActivity) {
+
+    override fun getItemCount(): Int {
+       return list.size
     }
-    override fun getItem(position: Int): Fragment {
-        return when (position) {
-            0 -> {
-                LoginFragment()
-            }
-            1 -> {
-                SignUpFragment()
-            }
-            else -> LoginFragment()
-        }
+
+    override fun createFragment(position: Int): Fragment {
+        return FoodTypePagerFragment()
     }
+
 }

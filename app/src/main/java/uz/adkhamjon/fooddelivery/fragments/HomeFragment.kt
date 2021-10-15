@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
         binding.viewpager.adapter=bannerPagerAdapter
         homeRvRvAdapter= HomeRvRvAdapter(requireContext(),categoryList2,object :HomeRvRvAdapter.OnItemClickListener{
             override fun onItem(position: Int) {
-
+                findNavController().navigate(R.id.foodTypeFragment)
             }
         })
         binding.recView.adapter=homeRvRvAdapter

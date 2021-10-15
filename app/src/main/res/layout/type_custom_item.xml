@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackgroundBorderless"
+    app:cardElevation="1dp"
+    app:cardCornerRadius="20dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            app:cardCornerRadius="@dimen/_35sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp">
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@drawable/food"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/name"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/black"
+            android:text="Veggie tomato mix"
+            app:layout_constraintBottom_toTopOf="@id/price"
+            app:layout_constraintStart_toEndOf="@id/card"
+            app:layout_constraintTop_toTopOf="@id/card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            app:layout_constraintBottom_toBottomOf="@id/card"
+            android:id="@+id/price"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="#FF460A"
+            android:text="1500 $"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintStart_toStartOf="@id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

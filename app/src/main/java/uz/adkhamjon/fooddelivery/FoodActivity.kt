@@ -101,6 +101,17 @@ class FoodActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
             }
         }
     }
+    fun setTittle(str:String){
+        binding.appBarFood.tittle.text=str
+    }
+    fun hideBell(){
+        binding.appBarFood.bell.visibility=View.GONE
+        binding.appBarFood.number.visibility=View.GONE
+    }
+    fun showBell(){
+        binding.appBarFood.bell.visibility=View.VISIBLE
+        binding.appBarFood.number.visibility=View.VISIBLE
+    }
     fun hideToolbar(){
         binding.appBarFood.top.visibility=View.GONE
     }
@@ -155,11 +166,4 @@ class FoodActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
         }
         return true
     }
-//    fun setUpNavigation() {
-//        bottomNavigationView=findViewById(R.id.bottomNav)
-//        val navHostFragment = supportFragmentManager
-//            .findFragmentById(R.id.nav_host_fragment_content_food) as NavHostFragment?
-//        NavigationUI.setupWithNavController(bottomNavigationView,
-//            navHostFragment!!.navController)
-//    }
 }
