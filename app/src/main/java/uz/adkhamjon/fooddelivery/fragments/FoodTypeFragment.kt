@@ -13,9 +13,7 @@ import uz.adkhamjon.fooddelivery.adapters.MyPagerAdapter
 import uz.adkhamjon.fooddelivery.databinding.FragmentFoodTypeBinding
 import uz.adkhamjon.fooddelivery.models.ExampleModel
 
-private const val ARG_PARAM1 = "param1"
 class FoodTypeFragment : Fragment() {
-    private var param1: ExampleModel? = null
     private lateinit var binding:FragmentFoodTypeBinding
     private lateinit var myPagerAdapter: MyPagerAdapter
     private lateinit var categoryList:ArrayList<String>
@@ -37,6 +35,24 @@ class FoodTypeFragment : Fragment() {
         }.attach()
         return binding.root
     }
+    fun setSoup(){
+        binding.soupImage.setImageResource(R.drawable.food)
+    }
+    fun removeSoup(){
+        binding.soupImage.setImageResource(R.drawable.ic_launcher_background)
+    }
+    fun setMainFood(){
+        binding.soupImage.setImageResource(R.drawable.food)
+    }
+    fun removeMainFood(){
+        binding.soupImage.setImageResource(R.drawable.ic_launcher_background)
+    }
+    fun setDrink(){
+        binding.soupImage.setImageResource(R.drawable.food)
+    }
+    fun removeDrink(){
+        binding.soupImage.setImageResource(R.drawable.ic_launcher_background)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         (activity as FoodActivity).hideBottomNav()
@@ -47,14 +63,5 @@ class FoodTypeFragment : Fragment() {
         (activity as FoodActivity).setTittle("")
         (activity as FoodActivity).showBottomNav()
         (activity as FoodActivity).showBell()
-    }
-    companion object {
-        @JvmStatic
-        fun newInstance(exampleModel: ExampleModel) =
-            FoodTypeFragment().apply {
-                arguments = Bundle().apply {
-                    putSerializable(ARG_PARAM1, exampleModel)
-                }
-            }
     }
 }

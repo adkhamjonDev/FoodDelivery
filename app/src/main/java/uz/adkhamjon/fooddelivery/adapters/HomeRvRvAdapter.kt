@@ -25,7 +25,7 @@ class HomeRvRvAdapter(var context: Context, var list:List<String>,var onItemClic
     }
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         Glide.with(context).load(list[position]).into(holder.foodItemBinding.image)
-        holder.foodItemBinding.card1.setOnClickListener {
+        holder.itemView.setOnClickListener {
             onItemClickListener.onItem(position)
         }
 

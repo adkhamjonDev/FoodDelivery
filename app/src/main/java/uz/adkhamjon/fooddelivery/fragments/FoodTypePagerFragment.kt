@@ -21,7 +21,8 @@ class FoodTypePagerFragment : Fragment() {
         loadData()
         typeRvAdapter= FoodTypeRvAdapter(requireContext(),list,object :FoodTypeRvAdapter.OnItemClickListener{
             override fun onItem(position: Int) {
-
+//                val fr=activity?.supportFragmentManager?.findFragmentById(R.id.foodTypeFragment)as FoodTypeFragment
+//                fr.setSoup()
             }
         })
         binding.rv.adapter=typeRvAdapter
