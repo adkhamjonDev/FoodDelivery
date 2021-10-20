@@ -4,5 +4,5 @@ import java.io.Serializable
 
 data class ExampleModel(
     var name:String?=null,
-    var image:String?=null
+    var image:Int?=null
 ):Serializable
