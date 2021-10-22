@@ -53,32 +53,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top"
-        android:gravity="center"
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="0dp">
-        <ImageView
-            android:src="@drawable/ic_heart__6_"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:textSize="@dimen/_20sdp"
-            android:text="No liked yet"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp"
-            android:layout_marginTop="10dp"
-            android:textSize="@dimen/_12sdp"
-            android:gravity="center"
-            android:text="Hit the orange button down below to Create an order"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+       <LinearLayout
+           android:id="@+id/noLikedLayout"
+           android:gravity="center"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <ImageView
+               android:src="@drawable/ic_heart__6_"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+           <TextView
+               android:textStyle="bold"
+               android:layout_marginTop="20dp"
+               android:textSize="@dimen/_20sdp"
+               android:text="No liked yet"
+               android:textColor="@color/black"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+           <TextView
+               android:layout_marginLeft="70dp"
+               android:layout_marginRight="70dp"
+               android:layout_marginTop="10dp"
+               android:textSize="@dimen/_12sdp"
+               android:gravity="center"
+               android:text="Hit the orange button down below to Create an order"
+               android:textColor="@color/black"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+       </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/recView"
+            android:orientation="vertical"
+            app:spanCount="2"
+            tools:listitem="@layout/liked_item"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

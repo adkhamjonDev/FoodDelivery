@@ -18,17 +18,21 @@ import uz.adkhamjon.fooddelivery.databinding.FragmentFoodTypeBinding
 import uz.adkhamjon.fooddelivery.models.ExampleModel
 import uz.adkhamjon.fooddelivery.viewmodels.SharedViewModel
 
-class FoodTypeFragment : Fragment() {
+class BusinessLunchFragment : Fragment() {
     private lateinit var binding:FragmentFoodTypeBinding
     private lateinit var myPagerAdapter: MyPagerAdapter
     private lateinit var categoryList:ArrayList<String>
     private lateinit var viewModel: SharedViewModel
+    private var tittle:String=""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding=FragmentFoodTypeBinding.inflate(inflater, container, false)
-        (activity as FoodActivity).setTittle("Veggie tomato")
+        if(arguments!=null){
+            tittle=requireArguments().getString("tittle")as String
+        }
+        (activity as FoodActivity).setTittle(tittle)
         viewModel= ViewModelProviders.of(requireActivity())[SharedViewModel::class.java]
         viewModel.getData().observe(viewLifecycleOwner,object:Observer<ExampleModel>{
             override fun onChanged(t: ExampleModel?) {
@@ -50,12 +54,12 @@ class FoodTypeFragment : Fragment() {
     private fun loadData() {
         categoryList= ArrayList()
         categoryList.add("Soup")
-        categoryList.add("Main Food")
+        categoryList.add("Burgers")
         categoryList.add("Drinks")
     }
 
     fun removeSoup(){
-        binding.soupImage.setImageResource(R.drawable.ic_launcher_background)
+        binding.soupImage.setImageResource(R.drawable.ic_circle_white)
     }
     fun removeMainFood(){
         binding.soupImage.setImageResource(R.drawable.ic_launcher_background)

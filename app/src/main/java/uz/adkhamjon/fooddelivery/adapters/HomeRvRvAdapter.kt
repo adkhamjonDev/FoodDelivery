@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import uz.adkhamjon.fooddelivery.databinding.FoodItemBinding
 import uz.adkhamjon.fooddelivery.databinding.NotificationItemBinding
+import uz.adkhamjon.fooddelivery.models.MainRvAdapterModel
 
-class HomeRvRvAdapter(var context: Context, var list:List<String>,var onItemClickListener: OnItemClickListener):
+class HomeRvRvAdapter(var context: Context, var list:List<MainRvAdapterModel>,var onItemClickListener: OnItemClickListener):
     RecyclerView.Adapter<HomeRvRvAdapter.MyViewHolder>(){
     inner class MyViewHolder(var foodItemBinding: FoodItemBinding): RecyclerView.ViewHolder(
         foodItemBinding.root){
@@ -24,9 +25,10 @@ class HomeRvRvAdapter(var context: Context, var list:List<String>,var onItemClic
         )
     }
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        Glide.with(context).load(list[position]).into(holder.foodItemBinding.image)
+        Glide.with(context).load(list[position].image).into(holder.foodItemBinding.image)
+        holder.foodItemBinding.name.text=list[position].name
         holder.itemView.setOnClickListener {
-            onItemClickListener.onItem(position)
+            onItemClickListener.onItem(list[position].name!!,position)
         }
 
     }
@@ -34,6 +36,6 @@ class HomeRvRvAdapter(var context: Context, var list:List<String>,var onItemClic
         return list.size
     }
     interface OnItemClickListener {
-        fun onItem(position:Int)
+        fun onItem(str:String,pos:Int)
     }
 }
