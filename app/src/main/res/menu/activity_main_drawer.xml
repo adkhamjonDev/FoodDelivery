@@ -19,8 +19,9 @@
     <group android:checkableBehavior="single"
         android:id="@+id/group_divider3">
         <item
-            android:icon="@drawable/ic_outline_local_offer"
-            android:title="Offer and promo" />
+            android:id="@+id/addressFragment"
+            android:icon="@drawable/ic_outline_location_on_24"
+            android:title="My Address" />
     </group>
     <group android:checkableBehavior="single"
         android:id="@+id/group_divider4">

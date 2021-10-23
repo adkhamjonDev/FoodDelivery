@@ -62,6 +62,11 @@ class FoodActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
                     hideToolbar()
                     hideBottomNav()
                 }
+                R.id.addressFragment->{
+                    navController.navigate(R.id.addressFragment)
+                    hideToolbar()
+                    hideBottomNav()
+                }
             }
             drawerLayout.closeDrawers()
             true

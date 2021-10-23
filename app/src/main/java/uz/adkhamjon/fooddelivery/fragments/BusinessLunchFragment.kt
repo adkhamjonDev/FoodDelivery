@@ -34,6 +34,7 @@ class BusinessLunchFragment : Fragment() {
         }
         (activity as FoodActivity).setTittle(tittle)
         viewModel= ViewModelProviders.of(requireActivity())[SharedViewModel::class.java]
+
         viewModel.getData().observe(viewLifecycleOwner,object:Observer<ExampleModel>{
             override fun onChanged(t: ExampleModel?) {
                 binding.soupImage.setImageResource(t?.image!!)
