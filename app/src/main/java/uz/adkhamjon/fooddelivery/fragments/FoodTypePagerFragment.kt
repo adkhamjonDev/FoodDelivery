@@ -24,10 +24,14 @@ class FoodTypePagerFragment : Fragment() {
     ): View {
         binding=FragmentFoodTypePagerBinding.inflate(inflater, container, false)
         loadData()
+
         viewmodel= ViewModelProviders.of(requireActivity())[SharedViewModel::class.java]
+
         typeRvAdapter= FoodTypeRvAdapter(requireContext(),list,object :FoodTypeRvAdapter.OnItemClickListener{
             override fun onItem(position: Int) {
+
                 viewmodel.setData(ExampleModel("example",R.drawable.food))
+
             }
         })
         binding.rv.adapter=typeRvAdapter

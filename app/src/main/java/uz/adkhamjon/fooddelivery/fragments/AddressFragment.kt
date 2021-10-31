@@ -95,7 +95,6 @@ class AddressFragment : Fragment(),OnMapReadyCallback {
         super.onDestroy()
         (activity as FoodActivity).showToolbar()
     }
-
     override fun onMapReady(p0: GoogleMap) {
         LocationServices.getFusedLocationProviderClient(requireContext())
         if (ActivityCompat.checkSelfPermission(

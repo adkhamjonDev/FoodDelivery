@@ -1,23 +1,18 @@
 package uz.adkhamjon.fooddelivery.fragments
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.tabs.TabLayoutMediator
 import uz.adkhamjon.fooddelivery.FoodActivity
 import uz.adkhamjon.fooddelivery.R
-import uz.adkhamjon.fooddelivery.adapters.FoodTypeRvAdapter
 import uz.adkhamjon.fooddelivery.adapters.MyPagerAdapter
 import uz.adkhamjon.fooddelivery.databinding.FragmentFoodTypeBinding
 import uz.adkhamjon.fooddelivery.models.ExampleModel
 import uz.adkhamjon.fooddelivery.viewmodels.SharedViewModel
-
 class BusinessLunchFragment : Fragment() {
     private lateinit var binding:FragmentFoodTypeBinding
     private lateinit var myPagerAdapter: MyPagerAdapter
@@ -29,10 +24,13 @@ class BusinessLunchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding=FragmentFoodTypeBinding.inflate(inflater, container, false)
+
         if(arguments!=null){
             tittle=requireArguments().getString("tittle")as String
         }
+
         (activity as FoodActivity).setTittle(tittle)
+
         viewModel= ViewModelProviders.of(requireActivity())[SharedViewModel::class.java]
 
         viewModel.getData().observe(viewLifecycleOwner,object:Observer<ExampleModel>{
@@ -40,6 +38,7 @@ class BusinessLunchFragment : Fragment() {
                 binding.soupImage.setImageResource(t?.image!!)
             }
         })
+
         loadData()
         myPagerAdapter= MyPagerAdapter(requireActivity(),categoryList)
         binding.viewPager.adapter=myPagerAdapter

@@ -27,8 +27,8 @@ class MyProfileFragment : Fragment() {
             val phoneNumber = binding.phone.text.toString()
             val profileModelExample=ProfileModelExample(name, email, phoneNumber)
             binding.name.setText(name)
-            binding.name.setText(email)
-            binding.name.setText(phoneNumber)
+            binding.email.setText(email)
+            binding.phone.setText(phoneNumber)
             binding.name.isEnabled=false
             binding.email.isEnabled=false
             binding.phone.isEnabled=false
@@ -37,7 +37,6 @@ class MyProfileFragment : Fragment() {
         binding.update.setOnClickListener {
             binding.name.isEnabled=true
             binding.email.isEnabled=true
-            binding.phone.isEnabled=true
         }
         binding.back.setOnClickListener {
             findNavController().popBackStack()
